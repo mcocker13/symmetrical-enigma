@@ -1,10 +1,13 @@
 # symmetrical-enigma
-# terminal commands 
+
+# Terminal commands 
 cd # change working directory
 pwd # print working directory 
-# absolute file path can be used from anywhere; relative must be specific (utilizes .. cd) 
+absolute file path can be used from anywhere; relative must be specific (utilizes .. cd) 
+
 cp # copy 
 ~ # means home
+
 # R commands
 getwd () # get working directory 
 matrix(c(), ncol = X, byrow = TRUE) # creates a matrix with X columns, fill by row (byrow = TRUE) with the items inside the combine command.
