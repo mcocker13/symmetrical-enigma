@@ -13,6 +13,7 @@ tail # shows the last lines, use n -2 for the last two lines
 grep # searches for the lines that contain a specific keyword   
 less # read the whole file, show all the data  
 nano # allows you to edit the whole text file  
+echo # repeats what the previous command's output was
 
 | # pipe operator, uses the last output as the input for the next command, example: grep line copy_me.txt | wc -l # shows the word count of the lines found with the keyword "line" in them
 
