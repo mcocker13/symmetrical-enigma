@@ -2,6 +2,7 @@
 
 # Terminal commands 
 ~ # means home  
+mkdir # make new working directory
 cd # change working directory  
 pwd # print working directory   
 absolute file path can be used from anywhere; relative must be specific (utilizes .. cd) 
