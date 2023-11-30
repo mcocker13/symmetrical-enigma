@@ -48,4 +48,34 @@ ggplot(framename.df, aes(x = Xlabel, y = ylabel, fill = maintitle)) + geom_bar(s
 merge() # merges multiple data files into one 
 combine() # 
 head() # shows the heading lines of the data, top lines
+read.table() # imports tables   
+intersect() # finds data from 2+ datasets that are the same   
+as.matrix() # creates a matrix from the data   
+shapiro.test() # creates a Shapiro-Wilk normality test, p-values less than 0.1 indicate the data are significantly different   
+wilcox.test() # Wilcoxon Rank-Sum test, tests for differences in the data, does not require a normal distribution   
+names() <- c() # renames the dataset column names     
+for(i in 1:(length(groups)-1)){ # Set 2 counters, 'i' starts at 1 and goes until one less than the number of groups; 'j' will start at 2, and go up tot he full number of groups
+  for(j in (i+1):length(groups)){
+    # Use this to pick the groups assigned to 'i' 
+    ix.metric.i <- metadata$BodySite == groups[i]
+    # use this to pick the groups assigned to 'j'
+    ix.metric.j <- metadata$BodySite == groups[j]
+    # stores the p-value from the test 
+    pvalue <- wilcox.test(alpha[ix.metric.i, "shannon"],
+                          alpha[ix.metric.j, "shannon"])$p.value
+    # appends the new p-value to the list 
+    pw.pvalues <- c(pw.pvalues, pvalue)
+    # sets the names of the groups tested
+    test.name <- paste(groups[i], "_vs_", groups[j], sep = '')
+    # appends the names of the groups tested to the list 
+    pw.names <- c(pw.names, test.name)
+  }
+}
+names(pw.pvalues) <- pw.names  
+p.adjust(dataname, 'fdr') # corrects for type I errors (false positives)
+
+
+
+
+
 
