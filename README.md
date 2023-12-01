@@ -49,7 +49,11 @@ merge() # merges multiple data files into one
 combine() # 
 head() # shows the heading lines of the data, top lines
 read.table() # imports tables   
-intersect() # finds data from 2+ datasets that are the same   
+intersect() # finds data from 2+ datasets that are the same  
+sink() # will write whatever is listed below it to a file, can close the file by listing sink()  
+cat() # category 
+tapply() # applies whatever modifier i.e., mean, median etc to the entire dataset 
+
 as.matrix() # creates a matrix from the data   
 shapiro.test() # creates a Shapiro-Wilk normality test, p-values less than 0.1 indicate the data are significantly different   
 wilcox.test() # Wilcoxon Rank-Sum test, tests for differences in the data, does not require a normal distribution   
